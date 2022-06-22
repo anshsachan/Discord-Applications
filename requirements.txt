@@ -1,0 +1,8 @@
+discord
+asyncio
+traceback2
+random2
+PyNaCl
+youtube_dl
+google-api-python-client
+asyncio
