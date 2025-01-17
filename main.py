@@ -9,14 +9,14 @@ intents = discord.Intents.default()
 intents.members = True
 
 
-botA = commands.Bot(command_prefix = "!", intents = intents)
+bot = commands.Bot(command_prefix = "!", intents = intents)
 
 
-@botA.command()
+@bot.command()
 async def ping(ctx):
     await ctx.channel.trigger_typing()
     await asyncio.sleep(0)
-    await ctx.send(f'Latency is {round(botA.latency * 1000)}ms')
+    await ctx.send(f'Latency is {round(bot.latency * 1000)}ms')
 
 
 #botA
@@ -35,7 +35,7 @@ extensions=[
 if __name__== "__main__":
     for extension in extensions:
         try:
-            botA.load_extension(extension)
+            bot.load_extension(extension)
         except Exception as e:
             print(f'Error loading (extenstion)', file=sys.stderr)
             traceback.print_exc()
@@ -43,9 +43,9 @@ if __name__== "__main__":
 
 
 
-@botA.event
+@bot.event
 async def on_ready():
-    await botA.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Crazy Gang"
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Crazy Gang"
     ))
     
     print("Memo艾Utilities is Ready")
@@ -53,8 +53,8 @@ async def on_ready():
 
 
 loop = asyncio.get_event_loop()
-loop.create_task(botA.start('ODg4ODA0MzI0NzQ1MDQ0MDQ4.YUYBiA.vbNjBd1LSiEqQPH2zeNPfDC1RCI'))
+loop.create_task(bot.start('ODg4ODA0MzI0NzQ1MDQ0MDQ4.G3wohA.hFvBY3KcoqFGqI8Xgu4h0vMTECPbDV2ZPOXmBM'))
 loop.run_forever()
 
 
-botA.run('TOKEN')
+bot.run('TOKEN')
