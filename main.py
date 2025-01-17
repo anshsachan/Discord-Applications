@@ -12,12 +12,12 @@ intents.members = True
 bot = commands.Bot(command_prefix = "!", intents = intents)
 
 
+
 @bot.command()
 async def ping(ctx):
     await ctx.channel.trigger_typing()
     await asyncio.sleep(0)
     await ctx.send(f'Latency is {round(bot.latency * 1000)}ms')
-
 
 
 extensions=[
@@ -44,7 +44,7 @@ if __name__== "__main__":
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Crazy Gang"
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Spotify"
     ))
     
     print("Memo艾Utilities is Ready")
