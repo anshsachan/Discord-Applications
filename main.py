@@ -19,7 +19,6 @@ async def ping(ctx):
     await ctx.send(f'Latency is {round(bot.latency * 1000)}ms')
 
 
-#botA
 
 extensions=[
             'cogs.moderation.info',
@@ -45,7 +44,7 @@ if __name__== "__main__":
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Crazy Gang"
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Crazy Gang"
     ))
     
     print("Memo艾Utilities is Ready")
